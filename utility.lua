@@ -7,14 +7,14 @@ end
 
 function WriteFile(filePath, text, mode)
     if not mode then mode = "w" end
-    file = fs.open(filePath, mode)
+    file = filesystem.open(filePath, mode)
     file:write(text)
     file:close()
 end
     
 function ReadFile(filePath, chunkSize)
-    file = fs.open(filePath, "r")
-    if fs.exists(filePath) and fs.isFile(filePath) then
+    file = filesystem.open(filePath, "r")
+    if filesystem.exists(filePath) and filesystem.isFile(filePath) then
     if not chunkSize then chunkSize = 8192 end
         local content = ""
         while true do
