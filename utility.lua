@@ -32,7 +32,7 @@ function ReadFile(filePath, chunkSize) --Reads the given text from the given fil
 end
 
 function BroadcastFromServer(networkCard, serverUUID, serverPort, sender, broadcastPort, d1, d2, d3, d4, d5) --Sends data to given server or port to be broadcasted
-    if(type(serverUUID) == string) then
+    if(type(serverUUID) == type("")) then
         networkCard:send(serverUUID, serverPort, sender, broadcastPort, d1, d2, d3, d4, d5)
         print("[SYSTEM] Packet sent to port " .. serverPort .. " of server with UUID " .. serverUUID)
     else networkCard:broadcast(serverPort, sender, broadcastPort, d1, d2, d3, d4, d5) 
