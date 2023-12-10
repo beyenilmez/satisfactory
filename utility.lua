@@ -63,6 +63,10 @@ function StartBeep() --Sound to play on start
     sleep(0.085)
     computer.beep(2)
 end
+
+function UpdateBeep() --Sound to play on update
+    computer.beep(2)
+end
     
 function ErrorBeep() --Sound to play on an error
     computer.beep(1)
